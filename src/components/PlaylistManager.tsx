@@ -73,7 +73,7 @@ const PlaylistManager: React.FC<PlaylistManagerProps> = ({
       </div>
 
       {/* My Playlists */}
-      <div className="bg-secondary rounded-xl shadow-2xl p-6 flex flex-col overflow-hidden">
+      <div className="bg-secondary rounded-xl shadow-2xl p-6 flex flex-col overflow-hidden min-h-[300px]">
         <h2 className="text-2xl text-white mb-6 tracking-tight">
           My Playlists
         </h2>
