@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gradient-to-br from-gray-900 to-black text-white font-sans;
+}
+
+/* style overrides for react-select */
+.react-select__control {
+  @apply bg-[#2a2a2a] border border-gray-600 rounded-lg px-2 py-1 text-white;
+}
+
+.react-select__menu {
+  @apply bg-[#2a2a2a] border border-gray-700 rounded-md shadow-md;
+}
+
+.react-select__option {
+  @apply text-white hover:bg-[#333333] cursor-pointer;
+}
+
+.react-select__single-value {
+  @apply text-white;
+}
+
+.react-select__placeholder {
+  @apply text-gray-400;
+}
