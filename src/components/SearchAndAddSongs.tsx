@@ -29,7 +29,7 @@ const SearchAndAddSongs: React.FC<Props> = ({
   addToPlaylist,
 }) => {
   return (
-    <div className="bg-secondary rounded-xl shadow-2xl p-6 text-white h-[600px] flex flex-col">
+    <div className="bg-secondary rounded-xl shadow-2xl p-6 text-white h-[650px] flex flex-col">
       <h2 className="text-2xl text-white mb-6 tracking-tight">
         Search & Add Songs
       </h2>
@@ -101,7 +101,7 @@ const SearchAndAddSongs: React.FC<Props> = ({
         </button>
       </div>
 
-      <div className="flex-1 overflow-y-auto pr-1 space-y-4">
+      <div className="flex-1 overflow-y-auto pr-1 space-y-4 hide-scrollbar">
         {results.map((song) => (
           <div
             key={song.spotifyId}

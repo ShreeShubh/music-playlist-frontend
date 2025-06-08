@@ -26,7 +26,12 @@ const Navbar = () => {
           className="text-xl font-bold cursor-pointer flex items-center gap-3"
           onClick={() => navigate("/")}
         >
-          <img src="/logo.png" alt="logo" width={50} height={50} />
+          <img
+            src="/logo.png"
+            alt="logo"
+            className="w-10 md:w-12 h-auto object-contain"
+          />
+
           <span className="text-accent">MPMS</span>
         </div>
 

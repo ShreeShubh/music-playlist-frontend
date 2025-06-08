@@ -10,9 +10,18 @@ const Home = () => {
           Music Playlist Manager
         </h1>
 
-        <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-300 mb-6 max-w-xl mx-auto">
           Create and manage your favorite playlists, search songs via Spotify,
           and vibe to your personal collection with ease.
+        </p>
+
+        <p className="text-base md:text-lg text-gray-400 mb-10">
+          Already registered?{" "}
+          <span className="text-white font-medium">Login</span>. <br />
+          New here?{" "}
+          <span className="text-white font-medium">
+            Please register first to get started.
+          </span>
         </p>
 
         <div className="flex flex-col sm:flex-row gap-5 justify-center">

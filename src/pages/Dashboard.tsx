@@ -14,6 +14,7 @@ const Dashboard = () => {
   const [playlists, setPlaylists] = useState<Playlist[]>([])
   const [editingId, setEditingId] = useState<string | null>(null)
   const [expandedId, setExpandedId] = useState<string | null>(null)
+  const [formError, setFormError] = useState("")
 
   const [query, setQuery] = useState("")
   const [results, setResults] = useState<Song[]>([])
@@ -33,14 +34,26 @@ const Dashboard = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (editingId) {
-      await API.put(`/api/playlists/${editingId}`, form)
-      setEditingId(null)
-    } else {
-      await API.post("/api/playlists", form)
+
+    if (!form.name.trim()) {
+      setFormError("Playlist name is required.")
+      return
     }
-    setForm({ name: "", description: "" })
-    fetchPlaylists()
+
+    try {
+      if (editingId) {
+        await API.put(`/api/playlists/${editingId}`, form)
+        setEditingId(null)
+      } else {
+        await API.post("/api/playlists", form)
+      }
+
+      setForm({ name: "", description: "" })
+      setFormError("")
+      fetchPlaylists()
+    } catch (err) {
+      console.error("Error saving playlist:", err)
+    }
   }
 
   const handleEdit = (pl: Playlist) => {
@@ -92,6 +105,7 @@ const Dashboard = () => {
           toggleExpand={toggleExpand}
           handleEdit={handleEdit}
           handleDelete={handleDelete}
+          formError={formError}
         />
 
         <SearchAndAddSongs
