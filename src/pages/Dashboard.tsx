@@ -34,10 +34,10 @@ const Dashboard = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (editingId) {
-      await API.put(`/playlists/${editingId}`, form)
+      await API.put(`/api/playlists/${editingId}`, form)
       setEditingId(null)
     } else {
-      await API.post("/playlists", form)
+      await API.post("/api/playlists", form)
     }
     setForm({ name: "", description: "" })
     fetchPlaylists()
@@ -49,7 +49,7 @@ const Dashboard = () => {
   }
 
   const handleDelete = async (id: string) => {
-    await API.delete(`/playlists/${id}`)
+    await API.delete(`/api/playlists/${id}`)
     fetchPlaylists()
   }
 
@@ -71,7 +71,7 @@ const Dashboard = () => {
 
   const addToPlaylist = async (song: Song) => {
     if (!selectedPlaylist) return
-    await API.post(`/playlists/${selectedPlaylist}/songs`, song)
+    await API.post(`/api/playlists/${selectedPlaylist}/songs`, song)
     fetchPlaylists()
   }
 
