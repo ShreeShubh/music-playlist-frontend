@@ -80,7 +80,7 @@ const Dashboard = () => {
   }, [])
 
   return (
-    <div className="h-screen pt-24 px-4 pb-10 flex">
+    <div className="min-h-screen pt-24 px-4 pb-10 flex">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full">
         <PlaylistManager
           form={form}
