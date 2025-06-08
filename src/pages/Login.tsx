@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
-import axios from "axios"
 import { TextField } from "@mui/material"
 import { toast } from "react-toastify"
+import API from "../api/axios"
 
 const Login = () => {
   const navigate = useNavigate()
@@ -15,7 +15,7 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const res = await axios.post("http://localhost:5001/api/auth/login", form)
+      const res = await API.post("/api/auth/login", form)
       //console.log(res)
 
       localStorage.setItem("token", res.data.accessToken)

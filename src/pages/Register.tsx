@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
-import axios from "axios"
 import { TextField } from "@mui/material"
 import { toast } from "react-toastify"
+import API from "../api/axios"
 
 const Register = () => {
   const navigate = useNavigate()
@@ -15,7 +15,7 @@ const Register = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      await axios.post("http://localhost:5001/api/auth/register", form)
+      await API.post("/api/auth/register", form)
 
       toast.success("Registration successful")
       navigate("/login")
