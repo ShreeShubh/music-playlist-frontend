@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard"
 
 import "react-toastify/dist/ReactToastify.css"
 import { ToastContainer } from "react-toastify"
+import NotFoundPage from "./pages/NotFoundPage"
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <ToastContainer position="top-right" autoClose={3000} />
     </Router>
