@@ -27,13 +27,13 @@ const Home = () => {
         <div className="flex flex-col sm:flex-row gap-5 justify-center">
           <button
             onClick={() => navigate("/login")}
-            className="bg-accent text-black font-semibold px-7 py-3 rounded-full transition-transform transform hover:scale-105 shadow-lg"
+            className="bg-accent text-black font-semibold px-7 py-3 rounded-full transition transform hover:scale-105 duration-300 shadow-lg"
           >
             Login
           </button>
           <button
             onClick={() => navigate("/register")}
-            className="border border-gray-300 hover:border-accent text-white font-semibold px-7 py-3 rounded-full transition-transform transform hover:scale-105 shadow-sm"
+            className="border border-gray-300 hover:border-accent text-white font-semibold px-7 py-3 rounded-full transition transform hover:scale-105 duration-300 shadow-sm"
           >
             Register
           </button>
